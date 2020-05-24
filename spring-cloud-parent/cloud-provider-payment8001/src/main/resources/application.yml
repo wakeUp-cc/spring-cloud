@@ -1,0 +1,15 @@
+server:
+  port: 8001   #每个微服务都有自己的端口
+
+spring:
+  application:
+    name: cloud-provider-service  #每一个微服务都有自己的名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource      #当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver        #mysql驱动包
+    url: jdbc:mysql://node01:3306/spirngcloud?useUnicode=true&characterEncoding-utr-8&useSSL=false
+    username: root
+    password: root
+
+mybatis-plus:
+    mapper-locations: classpath:mapper/**/*.xml
