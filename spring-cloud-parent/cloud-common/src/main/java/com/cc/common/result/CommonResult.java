@@ -1,5 +1,6 @@
 package com.cc.common.result;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * @data 2020/5/25
  */
 @Data
+@AllArgsConstructor
 public class CommonResult<T> {
 
     /**
@@ -14,7 +16,7 @@ public class CommonResult<T> {
      *
      * @see CommonResultStatus
      */
-    private CommonResultStatus status = CommonResultStatus.FAILURE;
+    private CommonResultStatus status;
 
     /**
      * 返回的结果
