@@ -28,7 +28,7 @@ public class PaymentController {
     private IPaymentService iPaymentService;
 
     //TODO 考虑使用统一异常处理
-    @GetMapping
+    @GetMapping("/test")
     public CommonResult test(String b) {
         return new CommonResult(CommonResultStatus.SUCCESS, b);
     }
