@@ -38,7 +38,7 @@ public class CodeGenerator {
     /**
      * 数据库连接
      */
-    private static String url="jdbc:mysql://58.49.23.178:9006/gczt_1.0?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false";
+    private static String url="jdbc:mysql://localhost:3306/spring_cloud?useUnicode=true&characterEncoding-utr-8&useSSL=false";
     /**
      * 数据库驱动
      */
@@ -50,7 +50,7 @@ public class CodeGenerator {
     /**
      * 数据库连接密码
      */
-    private static String password="tbl_db_543";
+    private static String password="root";
     /**
      * 作者
      */
@@ -58,11 +58,11 @@ public class CodeGenerator {
     /**
      * 父包名
      */
-    private static String packageParent = "com.tbl.gczt";
+    private static String packageParent = "com.cc";
     /**
      * 生成路径,到java目录那一级
      */
-    private static String path = "D:\\IdeaProjects\\gczt\\gczt-server\\src\\main\\java";
+    private static String path = "C:\\idea-code\\spring-cloud\\spring-cloud-parent\\cloud-provider-payment8001\\src\\main\\java";
 
     public static void main(String[] args) {
         // 代码生成器
