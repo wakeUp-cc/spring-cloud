@@ -37,7 +37,7 @@ public class PaymentController {
      * @return
      */
     @GetMapping("/findPaymentById/{id}")
-    public CommonResult<Payment> findPaymentById(@Max(message = "ID不能大于10",value = 10) @PathVariable("id") Long id) {
+    public CommonResult<Payment> findPaymentById(@Max(message = "ID不能大于10", value = 10) @PathVariable("id") Long id) {
         return new CommonResult<>(CommonResultStatus.SUCCESS, iPaymentService.getById(id));
     }
 
