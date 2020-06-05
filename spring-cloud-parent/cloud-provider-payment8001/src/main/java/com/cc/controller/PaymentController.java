@@ -2,7 +2,7 @@ package com.cc.controller;
 
 
 import com.cc.common.result.CommonResult;
-import com.cc.common.result.CommonResultStatus;
+import com.cc.common.result.CommonResultStatusEnum;
 import com.cc.entity.Payment;
 import com.cc.service.IPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class PaymentController {
      */
     @GetMapping("/findPaymentById/{id}")
     public CommonResult<Payment> findPaymentById(@Max(message = "ID不能大于10", value = 10) @PathVariable("id") Long id) {
-        return new CommonResult<>(CommonResultStatus.SUCCESS, iPaymentService.getById(id));
+        return new CommonResult<>(CommonResultStatusEnum.SUCCESS, iPaymentService.getById(id));
     }
 
 }

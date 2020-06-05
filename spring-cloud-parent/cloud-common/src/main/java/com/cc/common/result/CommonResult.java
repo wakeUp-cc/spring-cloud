@@ -14,16 +14,16 @@ public class CommonResult<T> {
     /**
      * 状态
      *
-     * @see CommonResultStatus
+     * @see CommonResultStatusEnum
      */
-    private CommonResultStatus status;
+    private CommonResultStatusEnum status;
 
     /**
      * 返回的结果
      */
     private T result;
 
-    public boolean getStatus() {
+    public Integer getStatus() {
         return status.code;
     }
 }

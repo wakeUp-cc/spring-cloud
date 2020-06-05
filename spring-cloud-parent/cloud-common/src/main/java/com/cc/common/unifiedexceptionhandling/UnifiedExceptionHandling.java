@@ -2,7 +2,7 @@ package com.cc.common.unifiedexceptionhandling;
 
 import com.cc.common.exceptions.MessageException;
 import com.cc.common.result.CommonResult;
-import com.cc.common.result.CommonResultStatus;
+import com.cc.common.result.CommonResultStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -48,7 +48,7 @@ public class UnifiedExceptionHandling {
                     + "],异常发生的方法名:[" + stackTrace[0].getMethodName()
                     + "],异常发生的代码行数:[" + stackTrace[0].getLineNumber() + "].");
         }
-        return new CommonResult<>(CommonResultStatus.FAILURE, message);
+        return new CommonResult<>(CommonResultStatusEnum.FAILURE, message);
     }
 
 }
