@@ -8,13 +8,13 @@ package com.cc.common.result;
 public enum CommonResultStatusEnum {
 
     /**
-     * 成功
-     */
-    SUCCESS(1, "成功"),
-    /**
      * 失败
      */
-    FAILURE(2, "失败");
+    FAILURE(0, "失败"),
+    /**
+     * 成功
+     */
+    SUCCESS(1, "成功");
 
     public Integer code;
     public String name;
