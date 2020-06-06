@@ -1,7 +1,0 @@
-spring:
-  datasource:
-    type: ${mysql.type}      #当前数据源操作类型
-    driver-class-name: ${driver-class-name}        #mysql驱动包
-    url: ${myslql.url}
-    username: ${mysql.username}
-    password: ${mysql.password}

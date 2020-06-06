@@ -1,0 +1,7 @@
+server:
+  #每个微服务都有自己的端口
+  port: 80
+
+logging:
+  level:
+    root: info

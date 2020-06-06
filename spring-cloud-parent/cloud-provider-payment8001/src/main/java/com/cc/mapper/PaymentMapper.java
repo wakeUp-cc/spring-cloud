@@ -1,7 +1,7 @@
 package com.cc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cc.entity.Payment;
+import com.cc.mybatisplus.entity.Payment;
 
 /**
  * <p>

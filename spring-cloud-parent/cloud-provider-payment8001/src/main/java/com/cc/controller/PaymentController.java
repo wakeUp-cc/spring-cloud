@@ -1,18 +1,15 @@
 package com.cc.controller;
 
 
-import com.cc.common.result.CommonResult;
-import com.cc.common.result.CommonResultStatusEnum;
-import com.cc.entity.Payment;
+import com.cc.common.entity.CommonResult;
+import com.cc.common.entity.CommonResultStatusEnum;
+import com.cc.mybatisplus.entity.Payment;
 import com.cc.service.IPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 
 /**
  * <p>
@@ -36,9 +33,27 @@ public class PaymentController {
      * @param id
      * @return
      */
-    @GetMapping("/findPaymentById/{id}")
-    public CommonResult<Payment> findPaymentById(@Max(message = "ID不能大于10", value = 10) @PathVariable("id") Long id) {
-        return new CommonResult<>(CommonResultStatusEnum.SUCCESS, iPaymentService.getById(id));
+    @GetMapping("/getById/{id}")
+    public CommonResult<Payment> findPaymentById(@NotNull(message = "id不能为空") @PathVariable("id") Long id) {
+        Payment payment = iPaymentService.getById(id);
+        if (payment != null) {
+            return new CommonResult<>(CommonResultStatusEnum.GET_SUCCESS.code, payment);
+        }
+        return new CommonResult<>(CommonResultStatusEnum.NOT_FOUND_ERROR.code, null);
     }
 
+    /**
+     * 新增支付记录
+     *
+     * @param payment
+     * @return
+     */
+    @PostMapping("/addPayment")
+    public CommonResult<String> addPayment(@RequestBody Payment payment) {
+        if (payment != null) {
+            iPaymentService.save(payment);
+            return new CommonResult<String>(CommonResultStatusEnum.PUT_SUCCESS.code, CommonResultStatusEnum.PUT_SUCCESS.message);
+        }
+        return new CommonResult<String>(CommonResultStatusEnum.FORMAT_ERROR.code, CommonResultStatusEnum.FORMAT_ERROR.message);
+    }
 }

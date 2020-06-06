@@ -7,15 +7,15 @@ spring:
     #每一个微服务都有自己的名称
     name: cloud-provider-service
   datasource:
-    type: ${mysql.type}
-    driver-class-name: ${mysql.driver-class-name}
-    url: ${mysql.url}
-    username: ${mysql.username}
-    password: ${mysql.password}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring_cloud?useUnicode=true&characterEncoding-utr-8&useSSL=false
+    username: root
+    password: root
 
 mybatis-plus:
-  mapper-locations: classpath:com/cc/**/mapper/*.xml
+  mapper-locations: classpath:mapper/**/*.xml
 
 logging:
   level:
-    root: debug
+    root: info
