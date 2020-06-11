@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer")
 public class OrderController {
 
-    @Value("${http.payment.url}")
+    @Value("http://cloud-eureka-payment")
     private String paymentUrl;
     @Autowired
     private RestTemplate restTemplate;

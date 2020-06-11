@@ -1,20 +1,19 @@
 server:
   #每个微服务都有自己的端口
-  port: 80
+  port: 8002
 
 logging:
   level:
     root: info
 
-#服务注册到eureka注册中心的地址
+###服务注册到eureka注册中心的地址
 eureka:
   client:
     service-url:
-      #注册地址
       defaultZone: http://root:root@127.0.0.1:7001/eureka
-    #因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
+    ###因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
     register-with-eureka: true
-    #是否需要从eureka上检索服务
+    ###是否需要从eureka上检索服务
     fetch-registry: true
   instance:
     prefer-ip-address: true
@@ -22,4 +21,4 @@ eureka:
 spring:
   application:
     #注册到eureka中的名称
-    name: cloud-eureka-order
+    name: cloud-eureka-payment

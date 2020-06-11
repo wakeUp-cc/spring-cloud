@@ -1,5 +1,5 @@
 server:
-  port: 7001
+  port: 7002
 
 eureka:
   server:
@@ -12,7 +12,7 @@ eureka:
     fetch-registry: true
     service-url:
       #设置以eureka server交互的地址,查询服务和注册服务都需要遵循该地址.  此处的${eureka.instance.hostname}就是注入上面的localhost
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:7002/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:7001/eureka/
   instance:
     hostname: localhost
 

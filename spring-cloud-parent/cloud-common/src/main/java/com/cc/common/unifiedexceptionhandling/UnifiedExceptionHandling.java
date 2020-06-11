@@ -42,8 +42,8 @@ public class UnifiedExceptionHandling {
         } else {
             message = CommonResultStatusEnum.ERROR.message;
             StackTraceElement[] stackTrace = e.getStackTrace();
-            log.error("系统发生异常,异常原因:[{}],异常发生所在类:[{}],异常发生所在方法名:[{}],异常发生所在代码行数:[{}]",
-                    e.getMessage(), stackTrace[0].getClassName(), stackTrace[0].getMethodName(), stackTrace[0].getLineNumber());
+            log.error("系统发生异常,异常类名:[{}],异常原因:[{}],异常发生所在类:[{}],异常发生所在方法名:[{}],异常发生所在代码行数:[{}]",
+                    e.getClass().getName(), e.getMessage(), stackTrace[0].getClassName(), stackTrace[0].getMethodName(), stackTrace[0].getLineNumber());
         }
         return new CommonResult<String>(commonResultStatusEnum.code, message);
     }

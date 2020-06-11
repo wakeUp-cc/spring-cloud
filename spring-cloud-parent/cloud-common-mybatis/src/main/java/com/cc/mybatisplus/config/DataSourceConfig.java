@@ -13,19 +13,19 @@ import javax.sql.DataSource;
  * @data 2020/6/6
  */
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:config.properties")
 public class DataSourceConfig {
 
     @Value("${data.source.url}")
     private String url;
     @Value("${data.source.username}")
     private String username;
-    @Value("${data.source.username}")
+    @Value("${data.source.password}")
     private String password;
     @Value("${data.source.driverClassName}")
     private String driverClassName;
 
-    @Bean
+    @Bean("druidDataSource")
     //@ConfigurationProperties(prefix = "data.source") TODO 为什么这个没用
     public DataSource getDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();

@@ -11,9 +11,11 @@
         <!--通用模块-->
         <module>cloud-common</module>
         <module>cloud-common-mybatis</module>
+        <module>cloud-eureka-server7001</module>
+        <module>cloud-eureka-server7002</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
-        <module>cloud-eureka-server7001</module>
+        <module>cloud-provider-payment8002</module>
     </modules>
     <packaging>pom</packaging>
 
