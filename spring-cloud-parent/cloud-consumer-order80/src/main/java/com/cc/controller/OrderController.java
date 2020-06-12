@@ -1,11 +1,10 @@
 package com.cc.controller;
 
 import com.cc.common.entity.CommonResult;
+import com.cc.feign.IPaymentFeignClient;
 import com.cc.mybatisplus.entity.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * @author 池臣
@@ -15,10 +14,8 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer")
 public class OrderController {
 
-    @Value("http://cloud-eureka-payment")
-    private String paymentUrl;
     @Autowired
-    private RestTemplate restTemplate;
+    private IPaymentFeignClient paymentFeign;
 
     /**
      * 创建支付记录
@@ -28,7 +25,7 @@ public class OrderController {
      */
     @PostMapping("/addPayment")
     public CommonResult addPayment(Payment payment) {
-        return restTemplate.postForObject(paymentUrl + "/payment/addPayment", payment, CommonResult.class);
+        return paymentFeign.addPayment(payment);
     }
 
     /**
@@ -39,7 +36,7 @@ public class OrderController {
      */
     @GetMapping("/getById/{id}")
     public CommonResult getById(@PathVariable("id") Long id) {
-        return restTemplate.getForObject(paymentUrl + "/payment/getById/" + id, CommonResult.class);
+        return paymentFeign.getById(id);
     }
 
 }

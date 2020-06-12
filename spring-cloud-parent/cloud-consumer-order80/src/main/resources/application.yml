@@ -19,6 +19,11 @@ eureka:
   instance:
     prefer-ip-address: true
 
+#开启容错机制
+feign:
+  hystrix:
+    enabled: true
+
 spring:
   application:
     #注册到eureka中的名称
