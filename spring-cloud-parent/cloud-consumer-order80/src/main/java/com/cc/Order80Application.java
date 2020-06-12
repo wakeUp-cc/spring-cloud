@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * @创建人 池臣
  * @创建时间 2020/6/6
- * @描述
+ * @描述 使用了zuul后,此消费者废弃
  */
 @EnableHystrix
 @EnableEurekaClient

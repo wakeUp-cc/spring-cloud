@@ -1,10 +1,10 @@
 server:
-  #每个微服务都有自己的端口
+  #服务端口
   port: 80
-
-logging:
-  level:
-    root: info
+spring:
+  application:
+    #指定服务名
+    name: cloud-zuul
 
 #服务注册到eureka注册中心的地址
 eureka:
@@ -17,12 +17,8 @@ eureka:
     #是否需要从eureka上检索服务
     fetch-registry: true
 
-#开启容错机制
-feign:
-  hystrix:
-    enabled: true
-
-spring:
-  application:
-    #注册到eureka中的名称
-    name: cloud-eureka-order
+zuul:
+  #定义服务转发规则
+  routes:
+    #默认的转发规则
+    user-uservice: /user-service/**　　
