@@ -56,11 +56,4 @@ public class PaymentController {
         }
         return new CommonResult<String>(CommonResultStatusEnum.FORMAT_ERROR.code, CommonResultStatusEnum.FORMAT_ERROR.message);
     }
-
-
-    @GetMapping("/test")
-    public String getTest() {
-        return new TestEntity().toString();
-    }
-
 }

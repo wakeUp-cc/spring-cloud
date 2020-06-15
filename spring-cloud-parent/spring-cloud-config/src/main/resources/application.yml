@@ -8,9 +8,9 @@ spring:
     config:
       server:
         git: #配置git仓库地址
-          uri: https://github.com/wakeUp-cc/spring-cloud-config.git
+          uri: https://github.com/wakeUp-cc/spring-cloud.git
           #配置文件目录地址,如果说配置文件在最外层,就不需要配置此项.如果说分了文件夹目录,就需要配置此项
-          search-paths: dev
+          search-paths: spring-cloud-parent/spring-cloud-config/src/main/resources/cloudconfig/
           username: 313821660@qq.com	#码云账号（公有项目不需要设置）
           password: cc19980930 	#码云密码（公有项目不需要设置）
       label: master	#分支名称
