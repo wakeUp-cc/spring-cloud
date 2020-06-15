@@ -4,7 +4,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
@@ -13,20 +12,18 @@ import javax.sql.DataSource;
  * @data 2020/6/6
  */
 @Configuration
-@PropertySource("classpath:config.properties")
 public class DataSourceConfig {
 
-    @Value("${data.source.url}")
+    @Value("${mysql.druid.url}")
     private String url;
-    @Value("${data.source.username}")
+    @Value("${mysql.druid.username}")
     private String username;
-    @Value("${data.source.password}")
+    @Value("${mysql.druid.password}")
     private String password;
-    @Value("${data.source.driverClassName}")
+    @Value("${mysql.druid.driverClassName}")
     private String driverClassName;
 
     @Bean("druidDataSource")
-    //@ConfigurationProperties(prefix = "data.source") TODO 为什么这个没用
     public DataSource getDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setUrl(url);
@@ -36,4 +33,35 @@ public class DataSourceConfig {
         return druidDataSource;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getDriverClassName() {
+        return driverClassName;
+    }
+
+    public void setDriverClassName(String driverClassName) {
+        this.driverClassName = driverClassName;
+    }
 }

@@ -2,6 +2,8 @@ server:
   port: 6001
 
 spring:
+  application:
+    name: cloud-config
   cloud:
     config:
       server:

@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <!--通用模块-->
+        <module>spring-cloud-config</module>
         <module>cloud-common</module>
         <module>cloud-common-mybatis</module>
         <module>cloud-eureka-server7001</module>
@@ -17,7 +18,6 @@
         <module>cloud-consumer-order80</module>
         <module>cloud-provider-payment8002</module>
         <module>cloud-zuul</module>
-        <module>spring-cloud-config</module>
     </modules>
     <packaging>pom</packaging>
 
