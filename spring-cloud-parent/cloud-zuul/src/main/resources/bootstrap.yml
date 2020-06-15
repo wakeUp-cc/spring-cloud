@@ -26,12 +26,3 @@ spring:
       discovery:
         enabled: true #启用发现服务功能
         service-id: cloud-config #指定配置中心工程的名称
-
-zuul:
-  #定义服务转发规则
-  routes:
-    #默认的转发规则
-    #    user-uservice: /user-service/**　
-    payment:
-      path: /payment1/**
-      serviceid: cloud-payment
