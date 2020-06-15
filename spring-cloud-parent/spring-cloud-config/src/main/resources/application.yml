@@ -25,6 +25,6 @@ eureka:
     fetch-registry: true
   instance:
     #eureka管理页面配置的微服务名称
-    instance-id: cloud-config
+    instance-id: config6001
     #eureka管理页面可以看到微服务的IP地址,鼠标放到微服务名称上,页面左下角显示IP
     prefer-ip-address: true
