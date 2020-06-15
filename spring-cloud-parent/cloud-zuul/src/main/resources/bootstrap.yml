@@ -10,7 +10,7 @@ eureka:
     fetch-registry: true
   instance:
     #eureka管理页面配置的微服务名称
-    instance-id: payment8002
+    instance-id: zuul80
     #eureka管理页面可以看到微服务的IP地址
     prefer-ip-address: true
 
@@ -21,8 +21,17 @@ spring:
   cloud:
     config:
       name: cloud-zuul #对应配置中心的应用名称，默认是本应用名，即spring.application.name,该名称要和git中的配置一致
-        profile: dev #对应配置服务中的{profile}
-        label: master #对应的分支
-        discovery:
-          enabled: true #启用发现服务功能
-          service-id: cloud-config #指定配置中心工程的名称
+      profile: dev #对应配置服务中的{profile}
+      label: master #对应的分支
+      discovery:
+        enabled: true #启用发现服务功能
+        service-id: cloud-config #指定配置中心工程的名称
+
+zuul:
+  #定义服务转发规则
+  routes:
+    #默认的转发规则
+    #    user-uservice: /user-service/**　
+    payment:
+      path: /payment1/**
+      serviceid: cloud-payment
