@@ -6,6 +6,7 @@ import com.cc.common.entity.CommonResultStatusEnum;
 import com.cc.mybatisplus.entity.Payment;
 import com.cc.service.IPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,4 +57,13 @@ public class PaymentController {
         }
         return new CommonResult<String>(CommonResultStatusEnum.FORMAT_ERROR.code, CommonResultStatusEnum.FORMAT_ERROR.message);
     }
+
+    @Value("${mysql.username}")
+    private String test;
+
+    @GetMapping("/test")
+    public String getTest() {
+        return test;
+    }
+
 }
