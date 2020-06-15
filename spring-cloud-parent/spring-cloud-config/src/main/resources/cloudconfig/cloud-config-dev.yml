@@ -1,6 +1,0 @@
-mysql:
-  druid:
-    url: jdbc:mysql://127.0.0.1:3306/spring_cloud?useUnicode=true&characterEncoding-utr-8&useSSL=false
-    username: root
-    passwrod: root
-    driverClassName: com.mysql.jdbc.Driver
