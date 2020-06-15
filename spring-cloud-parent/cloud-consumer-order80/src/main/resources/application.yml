@@ -16,6 +16,11 @@ eureka:
     register-with-eureka: true
     #是否需要从eureka上检索服务
     fetch-registry: true
+  instance:
+    #eureka管理页面配置的微服务名称
+    instance-id: oreder80
+    #eureka管理页面可以看到微服务的IP地址,鼠标放到微服务名称上,页面左下角显示IP
+    prefer-ip-address: true
 
 #开启容错机制
 feign:
