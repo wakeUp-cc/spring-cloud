@@ -22,8 +22,8 @@ eureka:
     #eureka管理页面可以看到微服务的IP地址
     prefer-ip-address: true
 
-zuul:
-  #定义服务转发规则
-  routes:
-    #默认的转发规则
-    user-uservice: /user-service/**　　
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

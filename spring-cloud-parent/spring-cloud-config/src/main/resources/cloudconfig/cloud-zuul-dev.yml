@@ -1,0 +1,8 @@
+zuul:
+  #定义服务转发规则
+  routes:
+    #默认的转发规则
+#    user-uservice: /user-service/**　
+    payment:
+      path: /payment/**
+      serviceid: cloud-payment
