@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
@@ -12,15 +13,16 @@ import javax.sql.DataSource;
  * @data 2020/6/6
  */
 @Configuration
+@PropertySource("classpath:config.properties")
 public class DataSourceConfig {
 
-    @Value("${mysql.druid.url}")
+    @Value("${data.source.url}")
     private String url;
-    @Value("${mysql.druid.username}")
+    @Value("${data.source.username}")
     private String username;
-    @Value("${mysql.druid.password}")
+    @Value("${data.source.password}")
     private String password;
-    @Value("${mysql.druid.driverClassName}")
+    @Value("${data.source.driverClassName}")
     private String driverClassName;
 
     @Bean("druidDataSource")
@@ -32,4 +34,5 @@ public class DataSourceConfig {
         druidDataSource.setDriverClassName(driverClassName);
         return druidDataSource;
     }
+
 }
