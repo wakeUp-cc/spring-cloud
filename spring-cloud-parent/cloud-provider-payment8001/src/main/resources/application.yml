@@ -24,4 +24,4 @@ eureka:
 spring:
   application:
     #注册到eureka中的名称
-    name: cloud-eureka-payment
+    name: payment
