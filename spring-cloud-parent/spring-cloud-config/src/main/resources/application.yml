@@ -10,7 +10,21 @@ spring:
         git: #配置git仓库地址
           uri: https://github.com/wakeUp-cc/spring-cloud.git
           #配置文件目录地址,如果说配置文件在最外层,就不需要配置此项.如果说分了文件夹目录,就需要配置此项
-          search-paths: spring-cloud-parent/spring-cloud-config/src/main/resources/cloudconfig/
+          search-paths: spring-cloud-parent/spring-cloud-config/src/main/resources/cloudconfig
           username: 313821660@qq.com	#码云账号（公有项目不需要设置）
           password: cc19980930 	#码云密码（公有项目不需要设置）
       label: master	#分支名称
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:root@127.0.0.1:7001/eureka/
+    ###因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
+    register-with-eureka: true
+    ###是否需要从eureka上检索服务
+    fetch-registry: true
+  instance:
+    #eureka管理页面配置的微服务名称
+    instance-id: cloud-config
+    #eureka管理页面可以看到微服务的IP地址,鼠标放到微服务名称上,页面左下角显示IP
+    prefer-ip-address: true

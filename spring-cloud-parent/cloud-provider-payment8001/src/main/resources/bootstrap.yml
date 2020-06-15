@@ -2,8 +2,9 @@ spring:
   cloud:
     config:
       #配置中心server端的访问地址
-      uri: http://127.0.0.1:6001/
+#      uri: http://127.0.0.1:6001/
       #对应配置服务中的{环境}
       profile: dev
       #对应的分支
       label: master
+      name: cloud-config
